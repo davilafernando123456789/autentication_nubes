@@ -7,7 +7,7 @@ import string
 from pymongo import MongoClient
 
 app = Flask(__name__)
-app.config['MONGO_URI'] = 'mongodb://mi-mongo-container:27017/prueba'  # Reemplaza con la URL de tu contenedor MongoDB
+app.config['MONGO_URI'] = 'mongodb://mongodb-container:27017/prueba'  # Reemplaza con la URL de tu contenedor MongoDB
 mongo = PyMongo(app)
 
 # Configuración de AWS SES
