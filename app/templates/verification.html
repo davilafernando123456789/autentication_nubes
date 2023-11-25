@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Iniciar sesión</title>
+    <!-- <meta charset="UTF-8"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <style>
+        body {
+            background-image: url("https://img.freepik.com/foto-gratis/hombre-espacio-copia-dispositivo-futurista_23-2148864987.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+        .card {
+            background-color: rgba(240, 240, 240, 0.9);
+            border: 1px solid #e2e5ec;
+            border-radius: 10px;
+            padding: 20px;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        .card-title {
+            text-align: center;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .btn-login {
+            background-color: #007bff;
+            color: #fff;
+            width: 100%;
+        }
+        .btn-register {
+            margin-top: 10px;
+        }
+        @media (max-width: 767px) {
+            .card {
+                margin: 0;
+            }
+        }
+        /* Agregar estilo personalizado para el botón de Google */
+.btn-google {
+    background-color: #ffffff; /* Fondo blanco */
+    color: #4285F4; /* Texto azul de Google */
+    border: 1px solid #4285F4; /* Borde azul de Google */
+    text-align: center;
+    padding: 10px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Estilo para el ícono de Google */
+.google-icon {
+    width: 40px; /* Ajusta el ancho según tus preferencias */
+    height: 20px; /* Ajusta la altura según tus preferencias */
+    margin-right: 10px; /* Espacio entre el ícono y el texto */
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row justify-content-start">
+        
+            <div class="col-lg-4 col-md-6 col-sm-8">
+                <div class="card">
+                    <h2 class="card-title">Código de Verificación</h2>
+                    <form method="POST" action="{{ url_for('verify') }}">
+
+                        <div class="form-group">
+                            <label for="verification_code">Código de verificación:</label>
+                            <input type="text" class="form-control" id="verification_code" name="verification_code" placeholder="Código de verificación" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="hidden" name="username" value="{{ username }}">
+                        </div>
+                        <div class="mt-2">
+                            <button type="submit" class="btn btn-primary btn-verify">Verificar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
