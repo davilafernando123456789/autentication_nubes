@@ -4,9 +4,10 @@ from werkzeug.security import generate_password_hash, check_password_hash
 import boto3
 import random
 import string
+from pymongo import MongoClient
 
 app = Flask(__name__)
-app.config['MONGO_URI'] = 'mongodb://localhost:27017/prueba'
+app.config['MONGO_URI'] = 'mongodb://mi-mongo-container:27017/prueba'  # Reemplaza con la URL de tu contenedor MongoDB
 mongo = PyMongo(app)
 
 # Configuración de AWS SES
